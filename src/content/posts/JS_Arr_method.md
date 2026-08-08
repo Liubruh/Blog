@@ -13,7 +13,7 @@ draft: false
 2. 可修改
 3. arr.length 获取长度
 4. Array 不支持 负数 下标访问, 即arr[-1], 但可以使用at(-1)访问
-```JavaScript
+```js
 let num = [1, 2, 3, 4]
 alert(num.at(-1)) // return 4
 ```
@@ -23,7 +23,7 @@ alert(num.at(-1)) // return 4
 ### 1. 数组
 JavaScript中的Array类似于双端队列, 在首端/末端都可以添加/删除元素
 > push/pop 的性能比 shift/unshift 好很多
-```JavaScript
+```js
 let num = ['apple', 'orange'];
 // 末尾取出 pop
 alert(num.pop) // return 'orange', num = ['apple']
@@ -36,7 +36,7 @@ num.unshift('apple') // num = ['apple', 'pear', 'banana']
 ```
 
 ### 2. 循环
-```JavaScript
+```js
 // 1. 
 let num = ['apple', 'banana']
 for(let i = 0; i < num.length;i++){
@@ -49,7 +49,7 @@ for(let n of num){
 ```
 
 ### 3. toString()
-```JavaScript
+```js
 let num = [1, 2]
 alert(num.toString()) // return "1,2"
 ```
@@ -59,31 +59,31 @@ alert(num.toString()) // return "1,2"
 
 ### 5. 删除Array元素 - splice(start,deleteCount,elem1,...,elemN)
 > 返回删除元素组成的数组
-```JavaScript
+```js
 let fruits = ['apple', 'banana', 'orange', 'pear'];
 outFruits = splice(1,2) // 删除下标1开始的2个元素, 返回 ['banana', 'orange'], fruits = ['apple', 'pear']
 replaceFruits = splice(1,1,'banana') // 删除下标1开始的1个元素, 并插入'banana', 返回 ['pear'], fruits = ['apple', 'banana']
 ```
 当我们把deleteCount设为0时,`splice`就可以插入元素, 但不删除元素了
-```JavaScript
+```js
 addFruits = splice(0,0,'orange') // 在下标0处插入'orange', fruits = ['orange', 'apple', 'banana']
 ```
 
 ### 6. Array 切片 - slice(start, end)
-```JavaScript
+```js
 let fruits = ['apple', 'banana', 'orange', 'pear'];
 let slicedFruits = fruits.slice(1, 3); // 返回 ['banana', 'orange'], fruits = ['apple'\
 , 'banana', 'orange', 'pear']
 ```
 
 ### 7. 合并数组 arr.concat(arg1, arg2, ...)
-```JavaScript
+```js
 let num = [1, 2];
 alert(num.concat([3,4])); // return [1, 2, 3, 4]
 ```
 
 ### 8. 数组中每个元素都执行函数 forEach
-```JavaScript
+```js
 let fruits = ['apple', 'banana', 'orange']
 fruits.forEach((item, index, array) => {
     alert(`${item}在数组${array}中的下标为${index}`);
@@ -96,7 +96,7 @@ fruits.forEach((item, index, array) => {
 
 #### find() - 返回对象 findIndex() - 返回下标
 语法：let result = find(function(item, index, array){...})
-```JavaScript
+```js
 let fruits = [
    {id: 1, name: 'apple'},
    {id: 2, name: 'orange'},
@@ -106,7 +106,7 @@ let result = fruits.find(item => item.id == 1) // return {id: 1, name: 'apple'}
 
 ### 10. filter 筛选数组
 语法：let result = arr.filter(function(item, index, array){...})
-```JavaScript
+```js
 let users = [
   {id: 1, name: "John"},
   {id: 2, name: "Pete"},
@@ -120,14 +120,14 @@ alert(someUsers.length); // 2
 
 ### 11. map - 将每个元素转换成字符串的长度
 语法：let result = arr.map(function(item, index, array){...});最多可选择传入三个参数；
-```JavaScript
+```js
 let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
 alert(lengths); // 5,7,6
 ```
 
 ### 12. sort(fn) - 排序
 原地排序(in-place)；默认转换成字符串进行比较，设置fn可以改变排序方式
-```JavaScript
+```js
 let nums = [1, 15, 2];
 nums.sort() // return [1, 15, 2]，因为默认按字符串排序
 // 改变排序方式
@@ -147,7 +147,7 @@ alert(['Österreich', 'Andorra', 'Vietnam'].sort((a, b) => a.localeCompare(b))) 
 ```
 
 ### 13. reverse() 逆置排序
-```JavaScript
+```js
 let arr = [1, 2, 3, 4, 5];
 arr.reverse();
 
@@ -155,13 +155,13 @@ alert( arr ); // 5,4,3,2,1
 ```
 
 ### 14. 通过符号切分 - split
-```JavaScript
+```js
 let str = 'a,b,c,d,e';
 let arr = str.split(","); // return ['a', 'b', 'c', 'd', 'e']
 ```
 
 ### 15. 符号拼接 - join
-```JavaScript
+```js
 let arr = ['a', 'b', 'c', 'd', 'e'];
 let str = arr.join(","); // return 'a,b,c,d,e'
 ```
@@ -170,7 +170,7 @@ let str = arr.join(","); // return 'a,b,c,d,e'
 语法：let value = arr.reduce(function(accumulator,item,index,array){...},[initial]);
 > 其中initial为sum的accumulator默认值
 
-```JavaScript
+```js
 let arr = [1,2,3,4,5];
 let result = arr.reduce((sum, current) => sum + current, 0);
 alert(result)
@@ -185,14 +185,14 @@ alert(result)
 |第五次调用|10|5|15|
 
 ### 17. Array.isArray(arr) 判断是否是数组
-```JavaScript
+```js
 let fruits = ['apple', 'banana', 'orange'];
 alert(Array.isArray(fruits)); // return true
 ```
 
 ### 18. fill(value, start, end) 填充数据
 > 左闭右开
-```JavaScript
+```js
 let arr = [1, 2, 3, 4, 5];
 arr.fill(0, 2, 4); // return [1, 2, 0, 0, 5]
 ```
@@ -207,7 +207,7 @@ arr.fill(0, 2, 4); // return [1, 2, 0, 0, 5]
 计算并返回数组所有项之和。
 P.S. 0 是有效的数字，不要因为是 0 就停止问询。
 
-```JavaScript
+```js
 sumInput = () =>{
     let num = [];
     let sum = 0;
