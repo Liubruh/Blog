@@ -2,7 +2,7 @@
 title: Array Methods of JavaScript
 published: 2026-08-08
 description: "How to use array methods of js."
-<!--image: "./cover.jpeg"-->
+# image: "./cover.jpeg"
 tags: ["JavaScript", "Learn"]
 category: Technical Sharing
 draft: false
